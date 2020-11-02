@@ -1,0 +1,4 @@
+---
+# file: roles/kubernetes/defaults/main.yml
+cluster_network: "10.244.0.0/16"
+home_dir: /home/ansible

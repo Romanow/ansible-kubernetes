@@ -1,0 +1,20 @@
+---
+# file: inventories/local/static.yml
+all:
+  hosts:
+    master:
+      ansible_host: "192.168.52.10"
+    worker1:
+      ansible_host: "192.168.52.11"
+    worker2:
+      ansible_host: "192.168.52.12"
+  children:
+    cluster:
+      children:
+        master:
+          hosts:
+            master:
+        workers:
+          hosts:
+            worker1:
+            worker2:

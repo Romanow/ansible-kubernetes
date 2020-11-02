@@ -1,0 +1,9 @@
+---
+# file: roles/helm/meta/main.yml
+galaxy_info:
+  role_name: helm
+  author: Romanov Alex (romanowalex@mail.ru)
+  description: Install Helm packet manager for k8s
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu

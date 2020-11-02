@@ -1,0 +1,34 @@
+---
+# file: roles/kubernetes/tasks/install.yml
+- name: Add Kubernetes GPG key
+  become: yes
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: Add Kubernetes repository
+  become: yes
+  apt_repository:
+    repo: "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+    update_cache: yes
+    state: present
+
+- name: Install Kubernetes
+  become: yes
+  apt:
+    name: ['kubeadm', 'kubelet', 'kubectl']
+    update_cache: yes
+    state: present
+
+- name: Configure node ip
+  become: yes
+  lineinfile:
+    path: /etc/default/kubelet
+    line: KUBELET_EXTRA_ARGS=--node-ip={{ ansible_ssh_host }}
+    create: yes
+
+- name: restart kubelet
+  become: yes
+  service:
+    name: kubelet
+    daemon_reload: yes
+    state: restarted

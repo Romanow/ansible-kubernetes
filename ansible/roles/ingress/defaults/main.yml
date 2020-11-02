@@ -1,0 +1,4 @@
+---
+# file: roles/ingress/defaults/main.yml
+ingress_nginx_version: 0.40.2
+home_dir: /home/ansible

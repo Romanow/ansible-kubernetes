@@ -1,0 +1,8 @@
+*.log
+*.iml
+*.iws
+*.ipr
+.idea
+.vagrant
+.vault_pass
+.DS_Store

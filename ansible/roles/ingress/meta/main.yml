@@ -1,0 +1,11 @@
+---
+# file: roles/ingress/meta/main.yml
+galaxy_info:
+  role_name: ingress
+  author: Romanov Alex (romanowalex@mail.ru)
+  description: Install nginx Ingress Controller
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu
+dependencies:
+  - role: helm

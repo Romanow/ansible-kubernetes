@@ -1,0 +1,11 @@
+---
+# file: kubernetes.yml
+- hosts: master
+  roles:
+    - kubernetes
+    - metallb
+    - ingress
+
+- hosts: workers
+  roles:
+    - kubernetes

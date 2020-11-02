@@ -1,0 +1,20 @@
+---
+# file: roles/helm/meta/main.yml
+- name: Add Kubernetes GPG key
+  become: yes
+  apt_key:
+    url: https://baltocdn.com/helm/signing.asc
+
+- name: Add Kubernetes repository
+  become: yes
+  apt_repository:
+    repo: "deb https://baltocdn.com/helm/stable/debian/ all main"
+    update_cache: yes
+    state: present
+
+- name: Install Kubernetes
+  become: yes
+  apt:
+    name: helm
+    update_cache: yes
+    state: present

@@ -1,0 +1,12 @@
+---
+# file: roles/kubernetes/meta/main.yml
+galaxy_info:
+  role_name: kubernetes
+  author: Romanov Alex (romanowalex@mail.ru)
+  description: Configure kubernetes cluster
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu
+dependencies:
+  - role: docker
+  - role: helm

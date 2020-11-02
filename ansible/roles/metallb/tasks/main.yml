@@ -1,0 +1,25 @@
+---
+# file: roles/metallb/tasks/main.yml
+- name: Install MetalLB
+  shell: "kubectl apply -f {{ item }}"
+  with_items:
+    - "https://raw.githubusercontent.com/metallb/metallb/v{{ metallb_version }}/manifests/namespace.yaml"
+    - "https://raw.githubusercontent.com/metallb/metallb/v{{ metallb_version }}/manifests/metallb.yaml"
+
+- name: Configure MetalLB secret
+  shell: kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)" > .lb_secret
+  args:
+    chdir: "{{ home_dir }}"
+    creates: .lb_secret
+
+- name: Configure MetalLB
+  template:
+    src: metallb-cm.yml.j2
+    dest: "{{ home_dir }}/metallb-cm.yml"
+    mode: 0644
+
+- name: Apply MetalLB config to k8s cluster
+  shell: "kubectl apply -f {{ home_dir }}/metallb-cm.yml > .lb_init"
+  args:
+    chdir: "{{ home_dir }}"
+    creates: .lb_init

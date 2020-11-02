@@ -1,0 +1,5 @@
+---
+# file: roles/metallb/defaults/main.yml
+metallb_version: "0.9.4"
+ip_range: "192.168.52.101-192.168.52.110"
+home_dir: /home/ansible

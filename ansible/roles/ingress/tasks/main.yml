@@ -1,0 +1,14 @@
+---
+# file: roles/ingress/meta/main.yml
+- name: Add nginx ingress k8s repository
+  community.kubernetes.helm_repository:
+    name: nginx-stable
+    repo_url: https://helm.nginx.com/stable
+
+- name: Install nginx ingress controller
+  community.kubernetes.helm:
+    name: nginx-ingress
+    chart_ref: nginx-stable/nginx-ingress
+    release_namespace: nginx-ingress
+    update_repo_cache: yes
+    create_namespace: yes

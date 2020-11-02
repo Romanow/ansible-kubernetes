@@ -1,0 +1,11 @@
+---
+# file: roles/metallb/meta/main.yml
+galaxy_info:
+  role_name: metallb
+  author: Romanov Alex (romanowalex@mail.ru)
+  description: Configure MetalLB load balancer
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu
+dependencies:
+  - role: helm
