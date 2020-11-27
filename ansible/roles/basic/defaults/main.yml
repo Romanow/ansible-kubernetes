@@ -7,6 +7,7 @@ basic_packages:
   - aptitude
   - net-tools
   - zip
+  - jq
   - unzip
   - python3
   - python3-pip
