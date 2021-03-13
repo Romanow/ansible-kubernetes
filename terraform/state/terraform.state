@@ -1,0 +1,141 @@
+{
+  "version": 4,
+  "terraform_version": "0.13.5",
+  "serial": 4,
+  "lineage": "6da5db0b-a41e-5676-a94c-ca815c3419ea",
+  "outputs": {
+    "instance_ip_addr": {
+      "value": [
+        "68.183.11.200"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string"
+        ]
+      ]
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "digitalocean_droplet_snapshot",
+      "name": "vm_snapshot",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2021-03-12T20:19:10Z",
+            "droplet_id": "236513279",
+            "id": "80259617",
+            "min_disk_size": 60,
+            "most_recent": true,
+            "name": "base-dev-image.12-03-2021",
+            "name_regex": null,
+            "region": "ams3",
+            "regions": [
+              "ams3"
+            ],
+            "size": 1.47
+          }
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_droplet",
+      "name": "vm",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "index_key": 0,
+          "schema_version": 1,
+          "attributes": {
+            "backups": false,
+            "created_at": "2021-03-13T17:54:04Z",
+            "disk": 60,
+            "id": "236667375",
+            "image": "80259617",
+            "ipv4_address": "68.183.11.200",
+            "ipv4_address_private": "10.110.0.2",
+            "ipv6": false,
+            "ipv6_address": "",
+            "locked": false,
+            "memory": 2048,
+            "monitoring": false,
+            "name": "vm-0",
+            "price_hourly": 0.02232,
+            "price_monthly": 15,
+            "private_networking": true,
+            "region": "ams3",
+            "resize_disk": true,
+            "size": "s-2vcpu-2gb",
+            "ssh_keys": [
+              "be:90:43:5c:29:83:f3:87:59:14:d9:57:a7:3b:4b:32"
+            ],
+            "status": "active",
+            "tags": [
+              "master"
+            ],
+            "urn": "do:droplet:236667375",
+            "user_data": null,
+            "vcpus": 2,
+            "volume_ids": [],
+            "vpc_uuid": "619a4572-3caa-460d-bff5-fd4ed1bfb89e"
+          },
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "data.digitalocean_droplet_snapshot.vm_snapshot",
+            "digitalocean_tag.master",
+            "digitalocean_tag.worker"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_tag",
+      "name": "master",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "databases_count": 0,
+            "droplets_count": 0,
+            "id": "master",
+            "images_count": 0,
+            "name": "master",
+            "total_resource_count": 0,
+            "volume_snapshots_count": 0,
+            "volumes_count": 0
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_tag",
+      "name": "worker",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "databases_count": 0,
+            "droplets_count": 0,
+            "id": "worker",
+            "images_count": 0,
+            "name": "worker",
+            "total_resource_count": 0,
+            "volume_snapshots_count": 0,
+            "volumes_count": 0
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,9 @@
 *.iml
 *.iws
 *.ipr
-.idea
-.vagrant
+.idea/
+.vagrant/
 .vault_pass
+.terraform/
 .DS_Store
+*.auto.tfvars
