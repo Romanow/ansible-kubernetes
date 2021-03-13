@@ -1,11 +1,3 @@
-resource "digitalocean_tag" "master" {
-  name = "master"
-}
-
-resource "digitalocean_tag" "worker" {
-  name = "worker"
-}
-
 data "digitalocean_droplet_snapshot" "vm_snapshot" {
   name        = var.vm.image
   region      = "ams3"
@@ -18,16 +10,18 @@ resource "digitalocean_droplet" "vm" {
   name     = "vm-${count.index}"
   region   = var.vm.region
   size     = var.vm.size
-  ssh_keys = [
-    var.ssh_fingerprint
-  ]
   tags     = [
-    count.index == 0 ? digitalocean_tag.master.id : digitalocean_tag.worker.id
+    "cluster",
+    count.index == 0 ? "master" : "workers"
   ]
 }
-
 
 output "instance_ip_addr" {
   value       = digitalocean_droplet.vm.*.ipv4_address
   description = "The IP addresses of the deployed instances, paired with their IDs."
+}
+
+output "droplet_price" {
+  value       = digitalocean_droplet.vm.*.price_hourly
+  description = "Droplet price per hour"
 }

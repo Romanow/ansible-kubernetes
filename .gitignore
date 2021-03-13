@@ -8,3 +8,6 @@
 .terraform/
 .DS_Store
 *.auto.tfvars
+*.lock.info
+*.state.backup
+digital_ocean.ini

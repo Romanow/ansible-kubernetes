@@ -1,16 +1,35 @@
 {
   "version": 4,
   "terraform_version": "0.13.5",
-  "serial": 4,
+  "serial": 121,
   "lineage": "6da5db0b-a41e-5676-a94c-ca815c3419ea",
   "outputs": {
-    "instance_ip_addr": {
+    "droplet_price": {
       "value": [
-        "68.183.11.200"
+        0.02232,
+        0.02232,
+        0.02232
       ],
       "type": [
         "tuple",
         [
+          "number",
+          "number",
+          "number"
+        ]
+      ]
+    },
+    "instance_ip_addr": {
+      "value": [
+        "188.166.105.122",
+        "165.22.192.47",
+        "142.93.231.245"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string",
+          "string",
           "string"
         ]
       ]
@@ -26,12 +45,12 @@
         {
           "schema_version": 0,
           "attributes": {
-            "created_at": "2021-03-12T20:19:10Z",
-            "droplet_id": "236513279",
-            "id": "80259617",
+            "created_at": "2021-03-13T21:39:03Z",
+            "droplet_id": "236694005",
+            "id": "80322142",
             "min_disk_size": 60,
             "most_recent": true,
-            "name": "base-dev-image.12-03-2021",
+            "name": "base-dev-image.13-03-2021",
             "name_regex": null,
             "region": "ams3",
             "regions": [
@@ -53,11 +72,11 @@
           "schema_version": 1,
           "attributes": {
             "backups": false,
-            "created_at": "2021-03-13T17:54:04Z",
+            "created_at": "2021-03-13T21:42:03Z",
             "disk": 60,
-            "id": "236667375",
-            "image": "80259617",
-            "ipv4_address": "68.183.11.200",
+            "id": "236694456",
+            "image": "80322142",
+            "ipv4_address": "188.166.105.122",
             "ipv4_address_private": "10.110.0.2",
             "ipv6": false,
             "ipv6_address": "",
@@ -71,14 +90,13 @@
             "region": "ams3",
             "resize_disk": true,
             "size": "s-2vcpu-2gb",
-            "ssh_keys": [
-              "be:90:43:5c:29:83:f3:87:59:14:d9:57:a7:3b:4b:32"
-            ],
+            "ssh_keys": null,
             "status": "active",
             "tags": [
+              "cluster",
               "master"
             ],
-            "urn": "do:droplet:236667375",
+            "urn": "do:droplet:236694456",
             "user_data": null,
             "vcpus": 2,
             "volume_ids": [],
@@ -86,54 +104,88 @@
           },
           "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
           "dependencies": [
-            "data.digitalocean_droplet_snapshot.vm_snapshot",
-            "digitalocean_tag.master",
-            "digitalocean_tag.worker"
+            "data.digitalocean_droplet_snapshot.vm_snapshot"
           ]
-        }
-      ]
-    },
-    {
-      "mode": "managed",
-      "type": "digitalocean_tag",
-      "name": "master",
-      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
-      "instances": [
+        },
         {
-          "schema_version": 0,
+          "index_key": 1,
+          "schema_version": 1,
           "attributes": {
-            "databases_count": 0,
-            "droplets_count": 0,
-            "id": "master",
-            "images_count": 0,
-            "name": "master",
-            "total_resource_count": 0,
-            "volume_snapshots_count": 0,
-            "volumes_count": 0
+            "backups": false,
+            "created_at": "2021-03-13T21:42:04Z",
+            "disk": 60,
+            "id": "236694457",
+            "image": "80322142",
+            "ipv4_address": "165.22.192.47",
+            "ipv4_address_private": "10.110.0.4",
+            "ipv6": false,
+            "ipv6_address": "",
+            "locked": false,
+            "memory": 2048,
+            "monitoring": false,
+            "name": "vm-1",
+            "price_hourly": 0.02232,
+            "price_monthly": 15,
+            "private_networking": true,
+            "region": "ams3",
+            "resize_disk": true,
+            "size": "s-2vcpu-2gb",
+            "ssh_keys": null,
+            "status": "active",
+            "tags": [
+              "cluster",
+              "workers"
+            ],
+            "urn": "do:droplet:236694457",
+            "user_data": null,
+            "vcpus": 2,
+            "volume_ids": [],
+            "vpc_uuid": "619a4572-3caa-460d-bff5-fd4ed1bfb89e"
           },
-          "private": "bnVsbA=="
-        }
-      ]
-    },
-    {
-      "mode": "managed",
-      "type": "digitalocean_tag",
-      "name": "worker",
-      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
-      "instances": [
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "data.digitalocean_droplet_snapshot.vm_snapshot"
+          ]
+        },
         {
-          "schema_version": 0,
+          "index_key": 2,
+          "schema_version": 1,
           "attributes": {
-            "databases_count": 0,
-            "droplets_count": 0,
-            "id": "worker",
-            "images_count": 0,
-            "name": "worker",
-            "total_resource_count": 0,
-            "volume_snapshots_count": 0,
-            "volumes_count": 0
+            "backups": false,
+            "created_at": "2021-03-13T21:42:04Z",
+            "disk": 60,
+            "id": "236694458",
+            "image": "80322142",
+            "ipv4_address": "142.93.231.245",
+            "ipv4_address_private": "10.110.0.3",
+            "ipv6": false,
+            "ipv6_address": "",
+            "locked": false,
+            "memory": 2048,
+            "monitoring": false,
+            "name": "vm-2",
+            "price_hourly": 0.02232,
+            "price_monthly": 15,
+            "private_networking": true,
+            "region": "ams3",
+            "resize_disk": true,
+            "size": "s-2vcpu-2gb",
+            "ssh_keys": null,
+            "status": "active",
+            "tags": [
+              "cluster",
+              "workers"
+            ],
+            "urn": "do:droplet:236694458",
+            "user_data": null,
+            "vcpus": 2,
+            "volume_ids": [],
+            "vpc_uuid": "619a4572-3caa-460d-bff5-fd4ed1bfb89e"
           },
-          "private": "bnVsbA=="
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "data.digitalocean_droplet_snapshot.vm_snapshot"
+          ]
         }
       ]
     }
