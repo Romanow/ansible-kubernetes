@@ -67,15 +67,16 @@
       shell: kubeadm token create --print-join-command
       register: join_command_raw
 
-    - name: set join command
-      set_fact:
+    - name: "Add K8S Token to dummy host"
+      add_host:
+        name:   "K8S_TOKEN_HOLDER"
         join_command: "{{ join_command_raw.stdout_lines[0] }}"
 
   when: "'master' in group_names"
 
 - name: Worker nodes join cluster
   become: yes
-  shell: "{{ hostvars['master'].join_command }} >> .node_joined"
+  shell: "{{ hostvars['K8S_TOKEN_HOLDER'].join_command }} >> .node_joined"
   args:
     chdir: "{{ home_dir }}"
     creates: .node_joined
