@@ -16,7 +16,7 @@
 
 - name: Install Kubernetes
   import_tasks: "install.yml"
-#  when: "'kubernetes' not in ansible_facts.packages"
+  when: "'kubernetes' not in ansible_facts.packages"
 
 - name: Configure master node
   block:
@@ -50,8 +50,8 @@
         remote_src: yes
 
     - name: Copy flannel kubernetes configuration
-      template:
-        src: kube-flannel.yml.j2
+      copy:
+        src: kube-flannel.yml
         dest: "{{ home_dir }}/kube-flannel.yml"
         owner: ansible
         group: ansible

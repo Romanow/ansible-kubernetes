@@ -1,20 +1,11 @@
 ---
 # file: kubernetes.yml
 - hosts: master
-  tasks:
-    - name: Install and configure k8s
-      include_role:
-        name: kubernetes
-    - name: Configure LK for local
-      include_role:
-        name: metallb
-      when: "cluster_type == 'local'"
-    - name: Configure ingress
-      include_role:
-        name: ingress
+  roles:
+    - kubernetes
+    - metallb
+    - ingress
 
 - hosts: workers
-  tasks:
-    - name: Install and configure k8s
-      include_role:
-        name: kubernetes
+  roles:
+    - kubernetes
