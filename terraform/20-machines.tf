@@ -5,15 +5,29 @@ data "digitalocean_droplet_snapshot" "vm_snapshot" {
 }
 
 resource "digitalocean_droplet" "vm" {
-  count    = var.vm.count
-  image    = data.digitalocean_droplet_snapshot.vm_snapshot.id
-  name     = "vm-${var.vm.name}-${count.index}"
-  region   = var.vm.region
-  size     = var.vm.size
-  tags     = [
+  count  = var.vm.count
+  image  = data.digitalocean_droplet_snapshot.vm_snapshot.id
+  name   = "vm-${var.vm.name}-${count.index}"
+  region = var.vm.region
+  size   = var.vm.size
+  tags   = [
     "cluster",
     count.index == 0 ? "master" : "workers"
   ]
+}
+
+resource "digitalocean_loadbalancer" "load-balancer" {
+  name        = "load-balancer"
+  region      = var.vm.region
+  droplet_tag = "cluster"
+
+  forwarding_rule {
+    entry_port     = 80
+    entry_protocol = "http"
+
+    target_port     = 80
+    target_protocol = "http"
+  }
 }
 
 output "instance_ip_addr" {

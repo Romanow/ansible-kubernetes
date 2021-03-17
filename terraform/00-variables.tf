@@ -15,7 +15,7 @@ variable "vm" {
     region = "ams3"
     name   = "k8s"
     size   = "s-2vcpu-2gb"
-    image  = "base-dev-image.13-03-2021"
+    image  = "base-dev-image.16-03-2021"
   }
 }
 

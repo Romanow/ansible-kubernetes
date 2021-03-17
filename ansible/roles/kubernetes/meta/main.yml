@@ -8,5 +8,5 @@ galaxy_info:
   platforms:
     - name: Ubuntu
 dependencies:
-  - role: docker
-  - role: helm
+#  - role: docker
+#  - role: helm

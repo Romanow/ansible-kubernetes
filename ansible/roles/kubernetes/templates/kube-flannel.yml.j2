@@ -185,7 +185,7 @@ spec:
             - /opt/bin/flanneld
           args:
             - --ip-masq
-            - --iface=enp0s8
+            - --iface={{ default_interface }}
             - --kube-subnet-mgr
           resources:
             requests:
