@@ -2,24 +2,16 @@ variable "do_token" {
   type = string
 }
 
-variable "vm" {
+variable "k8s" {
   type    = object({
-    count  = number
     region = string
     name   = string
     size   = string
-    image  = string
   })
   default = {
     count  = 3
     region = "ams3"
-    name   = "k8s"
+    name   = "k8s-cluster"
     size   = "s-2vcpu-2gb"
-    image  = "base-dev-image.16-03-2021"
   }
-}
-
-variable "domain" {
-  type = string
-  default = "romanow-alex.ru"
 }
