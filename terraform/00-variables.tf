@@ -4,6 +4,7 @@ variable "do_token" {
 
 variable "k8s" {
   type    = object({
+    count  = number
     region = string
     name   = string
     size   = string
