@@ -2,6 +2,16 @@ variable "do_token" {
   type = string
 }
 
+variable "cluster_tag" {
+  type = string
+  default = "k8s-cluster"
+}
+
+variable "domain" {
+  type = string
+  default = "romanow-alex.ru"
+}
+
 variable "k8s" {
   type    = object({
     count  = number
