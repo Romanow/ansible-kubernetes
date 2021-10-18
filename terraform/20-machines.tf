@@ -43,6 +43,27 @@ resource "digitalocean_loadbalancer" "loadbalancer" {
   droplet_tag = var.cluster_tag
 }
 
+resource "helm_release" "ingress" {
+  name       = "nginx-stable"
+  repository = "https://helm.nginx.com/stable"
+  chart      = "nginx-ingress"
+
+  set {
+    name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name"
+    value = digitalocean_loadbalancer.loadbalancer.name
+  }
+
+  set {
+    name  = "controller.service.annotations.kubernetes\\.digitalocean\\.com/load-balancer-id"
+    value = digitalocean_loadbalancer.loadbalancer.id
+  }
+
+  set {
+    name  = "controller.service.httpPort.port"
+    value = 443
+  }
+}
+
 resource "digitalocean_record" "base-public" {
   domain = var.domain
   name   = "k8s-cluster"
