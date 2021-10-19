@@ -13,34 +13,22 @@ resource "digitalocean_kubernetes_cluster" "cluster" {
   }
 }
 
-resource "digitalocean_certificate" "cert" {
-  name    = "${var.cluster_tag}-le-cert"
-  type    = "lets_encrypt"
-  domains = [
-    var.domain
-  ]
+data "digitalocean_certificate" "certificate" {
+  name = "romanow-alex-certificate"
 }
 
-resource "digitalocean_loadbalancer" "loadbalancer" {
-  name   = "loadbalancer"
-  region = var.k8s.region
+provider "kubernetes" {
+  host                   = digitalocean_kubernetes_cluster.cluster.endpoint
+  token                  = digitalocean_kubernetes_cluster.cluster.kube_config[0].token
+  cluster_ca_certificate = base64decode(digitalocean_kubernetes_cluster.cluster.kube_config[0].cluster_ca_certificate)
+}
 
-  forwarding_rule {
-    entry_port     = 443
-    entry_protocol = "https"
-
-    target_port     = 80
-    target_protocol = "http"
-
-    certificate_name = digitalocean_certificate.cert.name
+provider "helm" {
+  kubernetes {
+    host                   = digitalocean_kubernetes_cluster.cluster.endpoint
+    token                  = digitalocean_kubernetes_cluster.cluster.kube_config[0].token
+    cluster_ca_certificate = base64decode(digitalocean_kubernetes_cluster.cluster.kube_config[0].cluster_ca_certificate)
   }
-
-  healthcheck {
-    port     = 22
-    protocol = "tcp"
-  }
-
-  droplet_tag = var.cluster_tag
 }
 
 resource "helm_release" "ingress" {
@@ -50,18 +38,29 @@ resource "helm_release" "ingress" {
 
   set {
     name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name"
-    value = digitalocean_loadbalancer.loadbalancer.name
+    value = var.k8s.loadbalancer
   }
 
   set {
-    name  = "controller.service.annotations.kubernetes\\.digitalocean\\.com/load-balancer-id"
-    value = digitalocean_loadbalancer.loadbalancer.id
+    name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id"
+    value = data.digitalocean_certificate.certificate.uuid
   }
 
   set {
     name  = "controller.service.httpPort.port"
     value = 443
   }
+
+  timeout = 600
+}
+
+data "kubernetes_service" "nginx-ingress" {
+  metadata {
+    name = "nginx-stable-nginx-ingress"
+  }
+  depends_on = [
+    helm_release.ingress
+  ]
 }
 
 resource "digitalocean_record" "base-public" {
@@ -69,5 +68,5 @@ resource "digitalocean_record" "base-public" {
   name   = "k8s-cluster"
   type   = "A"
   ttl    = 300
-  value  = digitalocean_loadbalancer.loadbalancer.ip
+  value  = data.kubernetes_service.nginx-ingress.status[0].load_balancer[0].ingress[0].ip
 }

@@ -1,8 +1,311 @@
 {
   "version": 4,
   "terraform_version": "0.15.4",
-  "serial": 421,
+  "serial": 621,
   "lineage": "6da5db0b-a41e-5676-a94c-ca815c3419ea",
   "outputs": {},
-  "resources": []
+  "resources": [
+    {
+      "mode": "data",
+      "type": "digitalocean_certificate",
+      "name": "certificate",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "domains": [
+              "*.romanow-alex.ru",
+              "romanow-alex.ru"
+            ],
+            "id": "romanow-alex-certificate",
+            "name": "romanow-alex-certificate",
+            "not_after": "2022-01-16T20:01:49Z",
+            "sha1_fingerprint": "7be6f5d2d205565dd8bc4b15646c477664166de4",
+            "state": "verified",
+            "type": "lets_encrypt",
+            "uuid": "0fac0dbc-004b-4d9c-b561-9555f791852e"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "kubernetes_service",
+      "name": "nginx-ingress",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "default/nginx-stable-nginx-ingress",
+            "metadata": [
+              {
+                "annotations": {
+                  "kubernetes.digitalocean.com/load-balancer-id": "13e21d89-cbed-4460-baac-2d794914f979",
+                  "meta.helm.sh/release-name": "nginx-stable",
+                  "meta.helm.sh/release-namespace": "default"
+                },
+                "generation": 0,
+                "labels": {
+                  "app.kubernetes.io/instance": "nginx-stable",
+                  "app.kubernetes.io/managed-by": "Helm",
+                  "app.kubernetes.io/name": "nginx-stable-nginx-ingress",
+                  "helm.sh/chart": "nginx-ingress-0.11.2"
+                },
+                "name": "nginx-stable-nginx-ingress",
+                "namespace": "default",
+                "resource_version": "2634",
+                "uid": "de2b941d-7883-49bf-8890-637daa6446cc"
+              }
+            ],
+            "spec": [
+              {
+                "cluster_ip": "10.245.150.51",
+                "external_ips": [],
+                "external_name": "",
+                "external_traffic_policy": "Local",
+                "health_check_node_port": 32102,
+                "load_balancer_ip": "",
+                "load_balancer_source_ranges": [],
+                "port": [
+                  {
+                    "name": "http",
+                    "node_port": 30619,
+                    "port": 443,
+                    "protocol": "TCP",
+                    "target_port": "80"
+                  }
+                ],
+                "publish_not_ready_addresses": false,
+                "selector": {
+                  "app": "nginx-stable-nginx-ingress"
+                },
+                "session_affinity": "None",
+                "type": "LoadBalancer"
+              }
+            ],
+            "status": [
+              {
+                "load_balancer": [
+                  {
+                    "ingress": [
+                      {
+                        "hostname": "",
+                        "ip": "188.166.200.43"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_kubernetes_cluster",
+      "name": "cluster",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 3,
+          "attributes": {
+            "auto_upgrade": false,
+            "cluster_subnet": "10.244.0.0/16",
+            "created_at": "2021-10-19 07:49:23 +0000 UTC",
+            "endpoint": "https://93c6e1f4-e0fd-4fb1-b3ac-7aeaf7980b14.k8s.ondigitalocean.com",
+            "id": "93c6e1f4-e0fd-4fb1-b3ac-7aeaf7980b14",
+            "ipv4_address": "159.223.9.116",
+            "kube_config": [
+              {
+                "client_certificate": "",
+                "client_key": "",
+                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURKekNDQWcrZ0F3SUJBZ0lDQm5Vd0RRWUpLb1pJaHZjTkFRRUxCUUF3TXpFVk1CTUdBMVVFQ2hNTVJHbG4KYVhSaGJFOWpaV0Z1TVJvd0dBWURWUVFERXhGck9ITmhZWE1nUTJ4MWMzUmxjaUJEUVRBZUZ3MHlNVEV3TVRrdwpOelE1TWpkYUZ3MDBNVEV3TVRrd056UTVNamRhTURNeEZUQVRCZ05WQkFvVERFUnBaMmwwWVd4UFkyVmhiakVhCk1CZ0dBMVVFQXhNUmF6aHpZV0Z6SUVOc2RYTjBaWElnUTBFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFER1RPdUMzL0ZpaWF5RkFmeHUwY1Q0MldHUXM2OHE5THQ5VGcvdUd1Ymx5RGNaWGE3VgppZkRhS3dTNG8zb0JVY2lHaHVVaC9WdEQ4bEFSZkVrNUVCMzRNalpBMTJEd3pacGFBRmdjbmhQemJFY092bUxMCnROblpZUFE2clNQeTNKd1dGeDhwMlJTUzlFKzVVdjg3VVJPMll1WHVzV0t5RlppcWlLc2kvSkJZV0VodmJZTzgKdWRrTWhUT0FhdnVUUFpaQUFWU0d1WlNma1cwMWM3a1gzdXFSVXRDRXVEWkFsOEx2bnIxRjVIUUQwWDNqNS9JeQptTmVOc0xqZU9OR1VqbDg4N3pHd1FUVEtOZ0d4cW5sdk9hSFRHb3kvMkxQU2F1YTJyQS80dGlaSlpIbG5haW91CnFJZGI4bS9qQ09ZM2N5bm5MbU1hOXMzdVRmcFpGRnE2R0V6REFnTUJBQUdqUlRCRE1BNEdBMVVkRHdFQi93UUUKQXdJQmhqQVNCZ05WSFJNQkFmOEVDREFHQVFIL0FnRUFNQjBHQTFVZERnUVdCQlJqcUswOTZIN1ZCYnlWTTdzRgoxbmdlMUxBUWpEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFpZnlscjZ2ZENJTTNqSm1abm1YT09WWC8zLzJnClZDVHBoMHRNUHduMzdVb1ZRN3NYQ1FwMW5DeFg5T3F0a09iUDZXbVd3TFg3eEVKMnpTL0laeFBBMU9aNzI0N0UKRDMvM3M1ckoxVUFtRythMDhRVFlYTi9EQ1JYSVJuSHU5YUF2eGtmQjZoY2NxQUhaMlZnTW14bjZxUXdGNUZCRQpSYzVEQ29JemFlcUF5OUZLdlZIUHl4VjAydCtTYzlReVdqREpscmdlVjF6Z0FrMFRDMFVhVjFqL3FaRVpuRzRLCmdDaFFjNTVwL2dpUldrSjRyQVdDbjVDWWpaZEFaZWg0cEdRM1kzQjFJS2V4d2RjWDAwNW9HOHRsZllYZ3lzM0cKdEhnK0FpYXMxK3Y5UWxZRjg0eG9lRFRJR1hhS0EvdHVyVmhjYWZzZGw2U2VWSkk1WWxoNnFscnVDQT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                "expires_at": "2021-10-26T07:55:46Z",
+                "host": "https://93c6e1f4-e0fd-4fb1-b3ac-7aeaf7980b14.k8s.ondigitalocean.com",
+                "raw_config": "apiVersion: v1\nkind: Config\nclusters:\n- cluster:\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURKekNDQWcrZ0F3SUJBZ0lDQm5Vd0RRWUpLb1pJaHZjTkFRRUxCUUF3TXpFVk1CTUdBMVVFQ2hNTVJHbG4KYVhSaGJFOWpaV0Z1TVJvd0dBWURWUVFERXhGck9ITmhZWE1nUTJ4MWMzUmxjaUJEUVRBZUZ3MHlNVEV3TVRrdwpOelE1TWpkYUZ3MDBNVEV3TVRrd056UTVNamRhTURNeEZUQVRCZ05WQkFvVERFUnBaMmwwWVd4UFkyVmhiakVhCk1CZ0dBMVVFQXhNUmF6aHpZV0Z6SUVOc2RYTjBaWElnUTBFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFER1RPdUMzL0ZpaWF5RkFmeHUwY1Q0MldHUXM2OHE5THQ5VGcvdUd1Ymx5RGNaWGE3VgppZkRhS3dTNG8zb0JVY2lHaHVVaC9WdEQ4bEFSZkVrNUVCMzRNalpBMTJEd3pacGFBRmdjbmhQemJFY092bUxMCnROblpZUFE2clNQeTNKd1dGeDhwMlJTUzlFKzVVdjg3VVJPMll1WHVzV0t5RlppcWlLc2kvSkJZV0VodmJZTzgKdWRrTWhUT0FhdnVUUFpaQUFWU0d1WlNma1cwMWM3a1gzdXFSVXRDRXVEWkFsOEx2bnIxRjVIUUQwWDNqNS9JeQptTmVOc0xqZU9OR1VqbDg4N3pHd1FUVEtOZ0d4cW5sdk9hSFRHb3kvMkxQU2F1YTJyQS80dGlaSlpIbG5haW91CnFJZGI4bS9qQ09ZM2N5bm5MbU1hOXMzdVRmcFpGRnE2R0V6REFnTUJBQUdqUlRCRE1BNEdBMVVkRHdFQi93UUUKQXdJQmhqQVNCZ05WSFJNQkFmOEVDREFHQVFIL0FnRUFNQjBHQTFVZERnUVdCQlJqcUswOTZIN1ZCYnlWTTdzRgoxbmdlMUxBUWpEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFpZnlscjZ2ZENJTTNqSm1abm1YT09WWC8zLzJnClZDVHBoMHRNUHduMzdVb1ZRN3NYQ1FwMW5DeFg5T3F0a09iUDZXbVd3TFg3eEVKMnpTL0laeFBBMU9aNzI0N0UKRDMvM3M1ckoxVUFtRythMDhRVFlYTi9EQ1JYSVJuSHU5YUF2eGtmQjZoY2NxQUhaMlZnTW14bjZxUXdGNUZCRQpSYzVEQ29JemFlcUF5OUZLdlZIUHl4VjAydCtTYzlReVdqREpscmdlVjF6Z0FrMFRDMFVhVjFqL3FaRVpuRzRLCmdDaFFjNTVwL2dpUldrSjRyQVdDbjVDWWpaZEFaZWg0cEdRM1kzQjFJS2V4d2RjWDAwNW9HOHRsZllYZ3lzM0cKdEhnK0FpYXMxK3Y5UWxZRjg0eG9lRFRJR1hhS0EvdHVyVmhjYWZzZGw2U2VWSkk1WWxoNnFscnVDQT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K\n    server: https://93c6e1f4-e0fd-4fb1-b3ac-7aeaf7980b14.k8s.ondigitalocean.com\n  name: do-ams3-k8s-cluster\ncontexts:\n- context:\n    cluster: do-ams3-k8s-cluster\n    user: do-ams3-k8s-cluster-admin\n  name: do-ams3-k8s-cluster\ncurrent-context: do-ams3-k8s-cluster\nusers:\n- name: do-ams3-k8s-cluster-admin\n  user:\n    token: 0f0379a91b64b40f8cb233761d968d78bc9c89cf9d5c6049a1b02ce2d21a1947\n",
+                "token": "0f0379a91b64b40f8cb233761d968d78bc9c89cf9d5c6049a1b02ce2d21a1947"
+              }
+            ],
+            "name": "k8s-cluster",
+            "node_pool": [
+              {
+                "actual_node_count": 3,
+                "auto_scale": false,
+                "id": "97c64bdf-898d-4482-a91a-e4f853fcf429",
+                "labels": {},
+                "max_nodes": 0,
+                "min_nodes": 0,
+                "name": "worker-pool",
+                "node_count": 3,
+                "nodes": [
+                  {
+                    "created_at": "2021-10-19 07:49:23 +0000 UTC",
+                    "droplet_id": "269899004",
+                    "id": "49d6b092-2383-45da-870b-3c116e52e220",
+                    "name": "worker-pool-uc1vs",
+                    "status": "running",
+                    "updated_at": "2021-10-19 07:53:00 +0000 UTC"
+                  },
+                  {
+                    "created_at": "2021-10-19 07:49:23 +0000 UTC",
+                    "droplet_id": "269899003",
+                    "id": "0738c1ab-3ccc-4f2b-ba46-426acbe82417",
+                    "name": "worker-pool-uc1v5",
+                    "status": "running",
+                    "updated_at": "2021-10-19 07:53:00 +0000 UTC"
+                  },
+                  {
+                    "created_at": "2021-10-19 07:49:23 +0000 UTC",
+                    "droplet_id": "269899005",
+                    "id": "309366e9-bb57-4771-9ac1-e37c56bd67bb",
+                    "name": "worker-pool-uc1vk",
+                    "status": "running",
+                    "updated_at": "2021-10-19 07:53:00 +0000 UTC"
+                  }
+                ],
+                "size": "s-2vcpu-2gb",
+                "tags": [
+                  "k8s-cluster"
+                ]
+              }
+            ],
+            "region": "ams3",
+            "service_subnet": "10.245.0.0/16",
+            "status": "running",
+            "surge_upgrade": true,
+            "tags": [],
+            "updated_at": "2021-10-19 07:59:22 +0000 UTC",
+            "version": "1.20.9-do.0",
+            "vpc_uuid": "619a4572-3caa-460d-bff5-fd4ed1bfb89e"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjMifQ=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_record",
+      "name": "base-public",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "domain": "romanow-alex.ru",
+            "flags": 0,
+            "fqdn": "k8s-cluster.romanow-alex.ru",
+            "id": "271952779",
+            "name": "k8s-cluster",
+            "port": 0,
+            "priority": 0,
+            "tag": "",
+            "ttl": 300,
+            "type": "A",
+            "value": "188.166.200.43",
+            "weight": 0
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.digitalocean_certificate.certificate",
+            "data.kubernetes_service.nginx-ingress",
+            "digitalocean_kubernetes_cluster.cluster",
+            "helm_release.ingress"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "helm_release",
+      "name": "ingress",
+      "provider": "provider[\"registry.terraform.io/hashicorp/helm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "atomic": false,
+            "chart": "nginx-ingress",
+            "cleanup_on_fail": false,
+            "create_namespace": false,
+            "dependency_update": false,
+            "description": null,
+            "devel": null,
+            "disable_crd_hooks": false,
+            "disable_openapi_validation": false,
+            "disable_webhooks": false,
+            "force_update": false,
+            "id": "nginx-stable",
+            "keyring": null,
+            "lint": false,
+            "manifest": null,
+            "max_history": 0,
+            "metadata": [
+              {
+                "app_version": "2.0.2",
+                "chart": "nginx-ingress",
+                "name": "nginx-stable",
+                "namespace": "default",
+                "revision": 4,
+                "values": "{\"controller\":{\"service\":{\"annotations\":{\"service.beta.kubernetes.io/do-loadbalancer-certificate-id\":\"0fac0dbc-004b-4d9c-b561-9555f791852e\",\"service.beta.kubernetes.io/do-loadbalancer-name\":\"loadbalancer\"},\"httpPort\":{\"port\":443}}}}",
+                "version": "0.11.2"
+              }
+            ],
+            "name": "nginx-stable",
+            "namespace": "default",
+            "postrender": [],
+            "recreate_pods": false,
+            "render_subchart_notes": true,
+            "replace": false,
+            "repository": "https://helm.nginx.com/stable",
+            "repository_ca_file": null,
+            "repository_cert_file": null,
+            "repository_key_file": null,
+            "repository_password": null,
+            "repository_username": null,
+            "reset_values": false,
+            "reuse_values": false,
+            "set": [
+              {
+                "name": "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id",
+                "type": null,
+                "value": "0fac0dbc-004b-4d9c-b561-9555f791852e"
+              },
+              {
+                "name": "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name",
+                "type": null,
+                "value": "loadbalancer"
+              },
+              {
+                "name": "controller.service.httpPort.port",
+                "type": "",
+                "value": "443"
+              }
+            ],
+            "set_sensitive": [],
+            "skip_crds": false,
+            "status": "deployed",
+            "timeout": 600,
+            "values": null,
+            "verify": false,
+            "version": "0.11.2",
+            "wait": true,
+            "wait_for_jobs": false
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "data.digitalocean_certificate.certificate",
+            "digitalocean_kubernetes_cluster.cluster"
+          ]
+        }
+      ]
+    }
+  ]
 }

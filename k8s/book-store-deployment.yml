@@ -1,0 +1,41 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: book-store-lb
+  annotations:
+    service.beta.kubernetes.io/do-loadbalancer-name: "loadbalancer"
+    service.beta.kubernetes.io/do-loadbalancer-hostname: "k8s-cluster.romanow-alex.ru"
+spec:
+  type: LoadBalancer
+  selector:
+    app: book-store
+    version: v1
+  ports:
+    - name: http
+      protocol: TCP
+      port: 443
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-store
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-store
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: book-store
+        version: v1
+    spec:
+      containers:
+        - name: book-store
+          image: romanowalex/book-store:v1.0
+          imagePullPolicy: Always
+          ports:
+            - name: web
+              containerPort: 8080
