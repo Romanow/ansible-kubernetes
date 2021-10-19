@@ -47,8 +47,8 @@ resource "helm_release" "ingress" {
   }
 
   set {
-    name  = "controller.service.httpPort.port"
-    value = 443
+    name  = "controller.service.httpsPort.targetPort"
+    value = 80
   }
 
   timeout = 600
