@@ -12,9 +12,9 @@ variable "domain" {
   default = "romanow-alex.ru"
 }
 
-variable "istio_version" {
+variable "certificate_name" {
   type    = string
-  default = "1.12.0-alpha.5"
+  default = "romanow-alex-certificate"
 }
 
 variable "k8s" {
@@ -31,7 +31,7 @@ variable "k8s" {
   default = {
     loadbalancer = {
       name = "loadbalancer"
-      type = "gateway"
+      type = "istio"
     }
     count        = 3
     region       = "ams3"
@@ -42,7 +42,7 @@ variable "k8s" {
   validation {
     condition     = contains([
       "ingress",
-      "gateway"
+      "istio"
     ], var.k8s.loadbalancer.type)
     error_message = "Allowed values for Load Balancer type is 'Ingress' or 'Gateway'."
   }
