@@ -6,11 +6,11 @@ terraform init
 terraform apply
 ```
 
-DigitalOcean автоматически создает LoadBalancer для сущности k8s LoadBalancer. Для того, что использовать уже
-существующий LB, нужно в helm скриптах явно прописать id нужно LB.
+DigitalOcean автоматически создает LoadBalancer для сущности k8s LoadBalancer. Нужно в helm скриптах явно прописать
+конфигурацию LB.
 
-```shell
-helm install nginx-ingress nginx-stable/nginx-ingress \
-    --set controller.service.annotations."service\.beta\.kubernetes\.io/do-loadbalancer-name=loadbalancer" \
-    --set controller.service.annotations."kubernetes\.digitalocean\.com/load-balancer-id=<loadbalancer-id>"
-```
+### Links
+
+1. [Load Balancer Service Annotations](https://github.com/digitalocean/digitalocean-cloud-controller-manager/blob/master/docs/controllers/services/annotations.md)
+1. [Istio Helm Chart](https://comocomo.github.io/istio-charts/)
+1. [Istio Official Helm Chart](https://artifacthub.io/packages/helm/istio-official/istiod)
