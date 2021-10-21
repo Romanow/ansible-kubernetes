@@ -10,6 +10,9 @@ resource "helm_release" "istio-base" {
   chart      = "base"
   namespace  = kubernetes_namespace.istio-system.metadata[0].name
   timeout    = 600
+  depends_on = [
+    kubernetes_namespace.istio-system
+  ]
 }
 
 resource "helm_release" "discovery" {
@@ -18,6 +21,9 @@ resource "helm_release" "discovery" {
   chart      = "discovery"
   namespace  = kubernetes_namespace.istio-system.metadata[0].name
   timeout    = 600
+  depends_on = [
+    helm_release.istio-base
+  ]
 }
 
 resource "helm_release" "istio-ingress" {
@@ -36,6 +42,10 @@ resource "helm_release" "istio-ingress" {
     name  = "gateways.istio-ingressgateway.serviceAnnotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id"
     value = var.certificate_id
   }
+  depends_on = [
+    helm_release.istio-base,
+    helm_release.discovery
+  ]
 }
 
 resource "helm_release" "istio-egress" {
@@ -44,6 +54,11 @@ resource "helm_release" "istio-egress" {
   chart      = "egress"
   namespace  = kubernetes_namespace.istio-system.metadata[0].name
   timeout    = 600
+  depends_on = [
+    helm_release.istio-base,
+    helm_release.discovery,
+    helm_release.istio-ingress
+  ]
 }
 
 data "kubernetes_service" "istio-ingress" {

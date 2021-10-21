@@ -53,6 +53,7 @@ module "istio" {
     "book-store",
     "grafana",
     "kiali",
-    "tracing"
+    "tracing",
+    "store"
   ]
 }
