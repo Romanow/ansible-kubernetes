@@ -1,8 +1,10 @@
 resource "helm_release" "ingress" {
-  name       = "nginx-stable"
-  repository = "https://helm.nginx.com/stable"
-  chart      = "nginx-ingress"
-  timeout    = 600
+  name             = "nginx-stable"
+  repository       = "https://helm.nginx.com/stable"
+  chart            = "nginx-ingress"
+  namespace        = "nginx-ingress"
+  create_namespace = true
+  timeout          = 600
 
   set {
     name  = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name"
@@ -22,7 +24,8 @@ resource "helm_release" "ingress" {
 
 data "kubernetes_service" "nginx-ingress" {
   metadata {
-    name = "nginx-stable-nginx-ingress"
+    name      = "nginx-stable-nginx-ingress"
+    namespace = "nginx-ingress"
   }
   depends_on = [
     helm_release.ingress

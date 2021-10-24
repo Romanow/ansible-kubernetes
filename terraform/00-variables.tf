@@ -31,12 +31,12 @@ variable "k8s" {
   default = {
     loadbalancer = {
       name = "loadbalancer"
-      type = "istio"
+      type = "ingress"
     }
     count        = 3
     region       = "ams3"
     name         = "k8s-cluster"
-    size         = "s-2vcpu-4gb"
+    size         = "s-2vcpu-2gb"
   }
 
   validation {

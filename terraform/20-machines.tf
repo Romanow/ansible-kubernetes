@@ -38,7 +38,11 @@ module "nginx-ingress" {
   loadbalancer_name = var.k8s.loadbalancer.name
   domain            = var.domain
   hostnames         = [
-    "k8s-cluster"
+    "k8s-cluster",
+    "store",
+    "order",
+    "warehouse",
+    "warranty"
   ]
 }
 

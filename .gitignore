@@ -11,3 +11,4 @@
 *.auto.tfvars
 *.lock.info
 digital_ocean.ini
+terraform.state.backup

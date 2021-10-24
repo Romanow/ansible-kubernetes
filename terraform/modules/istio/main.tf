@@ -42,6 +42,7 @@ resource "helm_release" "istio-ingress" {
     name  = "gateways.istio-ingressgateway.serviceAnnotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id"
     value = var.certificate_id
   }
+
   depends_on = [
     helm_release.istio-base,
     helm_release.discovery

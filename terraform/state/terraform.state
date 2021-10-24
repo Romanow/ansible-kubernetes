@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "0.15.4",
-  "serial": 120,
+  "serial": 230,
   "lineage": "3d10d247-5b90-53ad-ba88-a8bbd9b00109",
   "outputs": {},
   "resources": [
@@ -41,19 +41,19 @@
           "attributes": {
             "auto_upgrade": false,
             "cluster_subnet": "10.244.0.0/16",
-            "created_at": "2021-10-21 14:37:28 +0000 UTC",
-            "endpoint": "https://8e70c7e7-5f63-4971-98c2-c94a832c5bff.k8s.ondigitalocean.com",
-            "id": "8e70c7e7-5f63-4971-98c2-c94a832c5bff",
-            "ipv4_address": "206.189.109.58",
+            "created_at": "2021-10-24 14:32:15 +0000 UTC",
+            "endpoint": "https://02a0112b-0a92-46af-b2fe-5e4a880adf13.k8s.ondigitalocean.com",
+            "id": "02a0112b-0a92-46af-b2fe-5e4a880adf13",
+            "ipv4_address": "159.223.0.186",
             "kube_config": [
               {
                 "client_certificate": "",
                 "client_key": "",
-                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURKekNDQWcrZ0F3SUJBZ0lDQm5Vd0RRWUpLb1pJaHZjTkFRRUxCUUF3TXpFVk1CTUdBMVVFQ2hNTVJHbG4KYVhSaGJFOWpaV0Z1TVJvd0dBWURWUVFERXhGck9ITmhZWE1nUTJ4MWMzUmxjaUJEUVRBZUZ3MHlNVEV3TWpFeApORE0zTXpWYUZ3MDBNVEV3TWpFeE5ETTNNelZhTURNeEZUQVRCZ05WQkFvVERFUnBaMmwwWVd4UFkyVmhiakVhCk1CZ0dBMVVFQXhNUmF6aHpZV0Z6SUVOc2RYTjBaWElnUTBFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFDZnVHVjdmb3d5UkphMFdzUThaTXMzVGV3dzA4VGs0cWVxZjYyWkJHTTJTNlpJd0lpcQpaOW5KNjBPb3puTTh0QjFsK2VjWmM2a3V6ZlM4dDRhOVIyRTllUlMyanBVbzBRc0NpdGhvd3VHMEpIVzFYdXlMCkc0WGJHbmhiTjdjdzY4N09jTlZwRy9DN1pFVHE5ODE0c21GRVZzS1poNCszVXlzVU9oZ2JjMDRmcGZsVlByd0EKTlRiWDFpR25scFNBRjBwSFF1OFBGamxraWtleGJMNHVCUWI2TTB2U3c3Ui9naFN5Q0NaZzNrNUY5Q3MxaW80TwoxZ3Z3TStlTERLcGVCU0prYk05ZGlvMUk2enR4M3NFcGJGSG9QUCt2dFJXeWQ5SndWcUx4bVVCN2xZSi9pVStrCkZSMFhQNGpTQVMzbGt4aE1nYjZkcm5ncXNOd2hqVVJJV0FjREFnTUJBQUdqUlRCRE1BNEdBMVVkRHdFQi93UUUKQXdJQmhqQVNCZ05WSFJNQkFmOEVDREFHQVFIL0FnRUFNQjBHQTFVZERnUVdCQlJ2NzUyMGJ2OXh6azZkRkxuYQpDdTVwSTJTSGFqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFIMXhiQVg4MmFJdUFaR0NZRk00cjJYSHlVd01JClJUVTIzU3ZMQlIrSzgrRjlENDhXdnJXajY3aHdxbStOUEREMkdndGdmMURzVkxyck82dlFtL1VpR29KWTJDWDQKYk9TWUVCUTlnb09zMjY5R2RCS1h5TCt5dmFHbjBOSGpsT1JVcVN5alRuRHM5bDBLRkE5QzNLSmlTOXE1ai9iQQowQklLR1gvbTlHY2VaRW1SSFhncG9uWUF1OHBZZmtuenVWMEhkQUJYdTZoZDRGSFh0aUwxVDdoazdzWk5ocWR0CjcxbU5oYWhHNDNmVitUc3BYWDJtUEc5bld4ck1wbEFvMGRiaWp0cWFtZ2llVDZJcVFsS3g3UktKWUVSZ0wvZVgKTzlyeVJHL2p3VW10bFh4aHQzRkN0SUVwUGF3SVhsNHJxNlh6WlhXbVcyUFdKU3JXa0E1Qm11UmM0QT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
-                "expires_at": "2021-10-28T14:43:30Z",
-                "host": "https://8e70c7e7-5f63-4971-98c2-c94a832c5bff.k8s.ondigitalocean.com",
-                "raw_config": "apiVersion: v1\nkind: Config\nclusters:\n- cluster:\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURKekNDQWcrZ0F3SUJBZ0lDQm5Vd0RRWUpLb1pJaHZjTkFRRUxCUUF3TXpFVk1CTUdBMVVFQ2hNTVJHbG4KYVhSaGJFOWpaV0Z1TVJvd0dBWURWUVFERXhGck9ITmhZWE1nUTJ4MWMzUmxjaUJEUVRBZUZ3MHlNVEV3TWpFeApORE0zTXpWYUZ3MDBNVEV3TWpFeE5ETTNNelZhTURNeEZUQVRCZ05WQkFvVERFUnBaMmwwWVd4UFkyVmhiakVhCk1CZ0dBMVVFQXhNUmF6aHpZV0Z6SUVOc2RYTjBaWElnUTBFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFDZnVHVjdmb3d5UkphMFdzUThaTXMzVGV3dzA4VGs0cWVxZjYyWkJHTTJTNlpJd0lpcQpaOW5KNjBPb3puTTh0QjFsK2VjWmM2a3V6ZlM4dDRhOVIyRTllUlMyanBVbzBRc0NpdGhvd3VHMEpIVzFYdXlMCkc0WGJHbmhiTjdjdzY4N09jTlZwRy9DN1pFVHE5ODE0c21GRVZzS1poNCszVXlzVU9oZ2JjMDRmcGZsVlByd0EKTlRiWDFpR25scFNBRjBwSFF1OFBGamxraWtleGJMNHVCUWI2TTB2U3c3Ui9naFN5Q0NaZzNrNUY5Q3MxaW80TwoxZ3Z3TStlTERLcGVCU0prYk05ZGlvMUk2enR4M3NFcGJGSG9QUCt2dFJXeWQ5SndWcUx4bVVCN2xZSi9pVStrCkZSMFhQNGpTQVMzbGt4aE1nYjZkcm5ncXNOd2hqVVJJV0FjREFnTUJBQUdqUlRCRE1BNEdBMVVkRHdFQi93UUUKQXdJQmhqQVNCZ05WSFJNQkFmOEVDREFHQVFIL0FnRUFNQjBHQTFVZERnUVdCQlJ2NzUyMGJ2OXh6azZkRkxuYQpDdTVwSTJTSGFqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFIMXhiQVg4MmFJdUFaR0NZRk00cjJYSHlVd01JClJUVTIzU3ZMQlIrSzgrRjlENDhXdnJXajY3aHdxbStOUEREMkdndGdmMURzVkxyck82dlFtL1VpR29KWTJDWDQKYk9TWUVCUTlnb09zMjY5R2RCS1h5TCt5dmFHbjBOSGpsT1JVcVN5alRuRHM5bDBLRkE5QzNLSmlTOXE1ai9iQQowQklLR1gvbTlHY2VaRW1SSFhncG9uWUF1OHBZZmtuenVWMEhkQUJYdTZoZDRGSFh0aUwxVDdoazdzWk5ocWR0CjcxbU5oYWhHNDNmVitUc3BYWDJtUEc5bld4ck1wbEFvMGRiaWp0cWFtZ2llVDZJcVFsS3g3UktKWUVSZ0wvZVgKTzlyeVJHL2p3VW10bFh4aHQzRkN0SUVwUGF3SVhsNHJxNlh6WlhXbVcyUFdKU3JXa0E1Qm11UmM0QT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K\n    server: https://8e70c7e7-5f63-4971-98c2-c94a832c5bff.k8s.ondigitalocean.com\n  name: do-ams3-k8s-cluster\ncontexts:\n- context:\n    cluster: do-ams3-k8s-cluster\n    user: do-ams3-k8s-cluster-admin\n  name: do-ams3-k8s-cluster\ncurrent-context: do-ams3-k8s-cluster\nusers:\n- name: do-ams3-k8s-cluster-admin\n  user:\n    token: c38f4190824a0a31840d03f077e3e8958b5bca52ec028ea3789eff18888e2c52\n",
-                "token": "c38f4190824a0a31840d03f077e3e8958b5bca52ec028ea3789eff18888e2c52"
+                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURKekNDQWcrZ0F3SUJBZ0lDQm5Vd0RRWUpLb1pJaHZjTkFRRUxCUUF3TXpFVk1CTUdBMVVFQ2hNTVJHbG4KYVhSaGJFOWpaV0Z1TVJvd0dBWURWUVFERXhGck9ITmhZWE1nUTJ4MWMzUmxjaUJEUVRBZUZ3MHlNVEV3TWpReApORE15TWpCYUZ3MDBNVEV3TWpReE5ETXlNakJhTURNeEZUQVRCZ05WQkFvVERFUnBaMmwwWVd4UFkyVmhiakVhCk1CZ0dBMVVFQXhNUmF6aHpZV0Z6SUVOc2RYTjBaWElnUTBFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFDenFrOUx1L205K1RtNUkxMjNaL3pxeEVYOURDTlVhdCszZGNPTTUvUzJsSXlIS3F4RQp1Rk1ZaUhzSVdCaEE3RHd1dzBXdjFaTXY3K09SWFRxUjZtS3BWenBkbnQvMGdkbzhUbnIyODVhbDJydnFYN0Q2ClRab1h4SkZzNm01ZXVrUkd2Q05qc3FZRWFZRGdYYUtiVjhiYi84Y2ZDNWJOaEJoaVgyeXVVeXNpcHd2VDhhVVQKaEtDRlBoMDBxeXFLbk9UOWNnUFZHMGRLakk5M3pIa1NocVpianBXZ0hTaG1xdkw3R3pUMFRObzdzMzZCTGNkTwpUSUtaZTllbmVjNDhwL2owUkRONzg0cmFTT0UwTnd6MzN2M29EbEltQUdjbEFNY1V2VzNYTjlKN1FOaDIxVHRaCm5MbTE4T3p3Vjd0bERRRktuMGlTM0NRNUdMR0NDaXJ5dHpGVEFnTUJBQUdqUlRCRE1BNEdBMVVkRHdFQi93UUUKQXdJQmhqQVNCZ05WSFJNQkFmOEVDREFHQVFIL0FnRUFNQjBHQTFVZERnUVdCQlRBNGI1S1FMNm1Zc3ZrU3pTdwpva0JSRkJURHFEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFUK2NOK1Ezdi93VVNJUHErWFZYTkhTS25mYjA0Cm5WaW5rU2dZYkx2ck9Kb3VJeWwvWnFDa0ZRV3JaVnVxclRuWWRYTmpKcklkS0ZQV1JLMEdmb3FtRTNKNmJWd0MKeVlnVW02Y010aDFqbXBMY0kxVnpoeVp3VUVpc013QW9nSDNlMVZsNmt4Um5jMisvakM0RVpJNy94WU8yZ0c4Rgp1dUNTcTBkNUpWMDllRkNSUmtlS1ZhTEdKbDBUQ0tNb0x3d0FsdGIvZlFGa3Y5S0FRaVpJQUZrc3FsZk5nbHhLCldrc0hqYTZ0ckpmWERTZFFWWEZKL2M4ak1hV0pPUGtEdExINityd0h5aUNEcmJKWVBYUWdVVzEzY21YYkNvTW8KbVkzMFNxZHBnZ2pjYWJkaXVvNnFTUTJCa0NVQ3FiVXV1dzFJWXdEVE9hbWlkQ01XTU54d2ZlVmtHQT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+                "expires_at": "2021-10-31T14:38:27Z",
+                "host": "https://02a0112b-0a92-46af-b2fe-5e4a880adf13.k8s.ondigitalocean.com",
+                "raw_config": "apiVersion: v1\nkind: Config\nclusters:\n- cluster:\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURKekNDQWcrZ0F3SUJBZ0lDQm5Vd0RRWUpLb1pJaHZjTkFRRUxCUUF3TXpFVk1CTUdBMVVFQ2hNTVJHbG4KYVhSaGJFOWpaV0Z1TVJvd0dBWURWUVFERXhGck9ITmhZWE1nUTJ4MWMzUmxjaUJEUVRBZUZ3MHlNVEV3TWpReApORE15TWpCYUZ3MDBNVEV3TWpReE5ETXlNakJhTURNeEZUQVRCZ05WQkFvVERFUnBaMmwwWVd4UFkyVmhiakVhCk1CZ0dBMVVFQXhNUmF6aHpZV0Z6SUVOc2RYTjBaWElnUTBFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFDenFrOUx1L205K1RtNUkxMjNaL3pxeEVYOURDTlVhdCszZGNPTTUvUzJsSXlIS3F4RQp1Rk1ZaUhzSVdCaEE3RHd1dzBXdjFaTXY3K09SWFRxUjZtS3BWenBkbnQvMGdkbzhUbnIyODVhbDJydnFYN0Q2ClRab1h4SkZzNm01ZXVrUkd2Q05qc3FZRWFZRGdYYUtiVjhiYi84Y2ZDNWJOaEJoaVgyeXVVeXNpcHd2VDhhVVQKaEtDRlBoMDBxeXFLbk9UOWNnUFZHMGRLakk5M3pIa1NocVpianBXZ0hTaG1xdkw3R3pUMFRObzdzMzZCTGNkTwpUSUtaZTllbmVjNDhwL2owUkRONzg0cmFTT0UwTnd6MzN2M29EbEltQUdjbEFNY1V2VzNYTjlKN1FOaDIxVHRaCm5MbTE4T3p3Vjd0bERRRktuMGlTM0NRNUdMR0NDaXJ5dHpGVEFnTUJBQUdqUlRCRE1BNEdBMVVkRHdFQi93UUUKQXdJQmhqQVNCZ05WSFJNQkFmOEVDREFHQVFIL0FnRUFNQjBHQTFVZERnUVdCQlRBNGI1S1FMNm1Zc3ZrU3pTdwpva0JSRkJURHFEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFUK2NOK1Ezdi93VVNJUHErWFZYTkhTS25mYjA0Cm5WaW5rU2dZYkx2ck9Kb3VJeWwvWnFDa0ZRV3JaVnVxclRuWWRYTmpKcklkS0ZQV1JLMEdmb3FtRTNKNmJWd0MKeVlnVW02Y010aDFqbXBMY0kxVnpoeVp3VUVpc013QW9nSDNlMVZsNmt4Um5jMisvakM0RVpJNy94WU8yZ0c4Rgp1dUNTcTBkNUpWMDllRkNSUmtlS1ZhTEdKbDBUQ0tNb0x3d0FsdGIvZlFGa3Y5S0FRaVpJQUZrc3FsZk5nbHhLCldrc0hqYTZ0ckpmWERTZFFWWEZKL2M4ak1hV0pPUGtEdExINityd0h5aUNEcmJKWVBYUWdVVzEzY21YYkNvTW8KbVkzMFNxZHBnZ2pjYWJkaXVvNnFTUTJCa0NVQ3FiVXV1dzFJWXdEVE9hbWlkQ01XTU54d2ZlVmtHQT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K\n    server: https://02a0112b-0a92-46af-b2fe-5e4a880adf13.k8s.ondigitalocean.com\n  name: do-ams3-k8s-cluster\ncontexts:\n- context:\n    cluster: do-ams3-k8s-cluster\n    user: do-ams3-k8s-cluster-admin\n  name: do-ams3-k8s-cluster\ncurrent-context: do-ams3-k8s-cluster\nusers:\n- name: do-ams3-k8s-cluster-admin\n  user:\n    token: fe1fbb6b82b57b4c85440fe64d46d2cd4dce86bf5c08508c6a0f74aa5e032acb\n",
+                "token": "fe1fbb6b82b57b4c85440fe64d46d2cd4dce86bf5c08508c6a0f74aa5e032acb"
               }
             ],
             "name": "k8s-cluster",
@@ -61,39 +61,39 @@
               {
                 "actual_node_count": 3,
                 "auto_scale": false,
-                "id": "61de4392-90ad-42dc-94aa-8891983c8054",
-                "labels": null,
+                "id": "024480f3-ab6e-428b-a83e-d0aa0811ec92",
+                "labels": {},
                 "max_nodes": 0,
                 "min_nodes": 0,
                 "name": "worker-pool",
                 "node_count": 3,
                 "nodes": [
                   {
-                    "created_at": "2021-10-21 14:37:28 +0000 UTC",
-                    "droplet_id": "270259553",
-                    "id": "fb2de743-c4c2-4e81-9e0f-ec778f71779b",
-                    "name": "worker-pool-u7gr9",
+                    "created_at": "2021-10-24 14:32:15 +0000 UTC",
+                    "droplet_id": "270680040",
+                    "id": "39c1e466-067c-4b45-93b3-4281cf7cb334",
+                    "name": "worker-pool-u7ze4",
                     "status": "running",
-                    "updated_at": "2021-10-21 14:40:38 +0000 UTC"
+                    "updated_at": "2021-10-24 14:35:42 +0000 UTC"
                   },
                   {
-                    "created_at": "2021-10-21 14:37:28 +0000 UTC",
-                    "droplet_id": "270259555",
-                    "id": "357c84e8-70d4-4a70-9208-24a5309cbed1",
-                    "name": "worker-pool-u7gbn",
+                    "created_at": "2021-10-24 14:32:15 +0000 UTC",
+                    "droplet_id": "270680039",
+                    "id": "7b222a50-6a0b-4679-b361-ba0d19a16b02",
+                    "name": "worker-pool-u7zei",
                     "status": "running",
-                    "updated_at": "2021-10-21 14:40:38 +0000 UTC"
+                    "updated_at": "2021-10-24 14:35:42 +0000 UTC"
                   },
                   {
-                    "created_at": "2021-10-21 14:37:28 +0000 UTC",
-                    "droplet_id": "270259554",
-                    "id": "8057182e-68ca-459f-96f4-5d057304b676",
-                    "name": "worker-pool-u7gb3",
+                    "created_at": "2021-10-24 14:32:15 +0000 UTC",
+                    "droplet_id": "270680041",
+                    "id": "5ecb7ec5-37cb-479c-9f09-3399ecd68b01",
+                    "name": "worker-pool-u7zev",
                     "status": "running",
-                    "updated_at": "2021-10-21 14:40:38 +0000 UTC"
+                    "updated_at": "2021-10-24 14:35:42 +0000 UTC"
                   }
                 ],
-                "size": "s-2vcpu-4gb",
+                "size": "s-2vcpu-2gb",
                 "tags": [
                   "k8s-cluster"
                 ]
@@ -103,8 +103,8 @@
             "service_subnet": "10.245.0.0/16",
             "status": "running",
             "surge_upgrade": true,
-            "tags": null,
-            "updated_at": "2021-10-21 14:43:19 +0000 UTC",
+            "tags": [],
+            "updated_at": "2021-10-24 14:41:03 +0000 UTC",
             "version": "1.20.9-do.0",
             "vpc_uuid": "619a4572-3caa-460d-bff5-fd4ed1bfb89e"
           },
@@ -114,75 +114,64 @@
       ]
     },
     {
-      "module": "module.istio[0]",
+      "module": "module.nginx-ingress[0]",
       "mode": "data",
       "type": "kubernetes_service",
-      "name": "istio-ingress",
+      "name": "nginx-ingress",
       "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
-            "id": "istio-system/istio-ingressgateway",
+            "id": "nginx-ingress/nginx-stable-nginx-ingress",
             "metadata": [
               {
                 "annotations": {
-                  "kubernetes.digitalocean.com/load-balancer-id": "1afbd2c0-6b11-4845-9d4d-c3249df54e2c",
-                  "meta.helm.sh/release-name": "ingress",
-                  "meta.helm.sh/release-namespace": "istio-system"
+                  "kubernetes.digitalocean.com/load-balancer-id": "ba271c13-ef30-4b19-aa7f-20de951ed5b3",
+                  "meta.helm.sh/release-name": "nginx-stable",
+                  "meta.helm.sh/release-namespace": "nginx-ingress"
                 },
                 "generation": 0,
                 "labels": {
-                  "app": "istio-ingressgateway",
+                  "app.kubernetes.io/instance": "nginx-stable",
                   "app.kubernetes.io/managed-by": "Helm",
-                  "install.operator.istio.io/owning-resource": "unknown",
-                  "istio": "ingressgateway",
-                  "istio.io/rev": "default",
-                  "operator.istio.io/component": "IngressGateways",
-                  "release": "ingress"
+                  "app.kubernetes.io/name": "nginx-stable-nginx-ingress",
+                  "helm.sh/chart": "nginx-ingress-0.11.2"
                 },
-                "name": "istio-ingressgateway",
-                "namespace": "istio-system",
-                "resource_version": "1829",
-                "uid": "8c5f7e8e-08f9-4fed-94d2-1c5cbaa79ba7"
+                "name": "nginx-stable-nginx-ingress",
+                "namespace": "nginx-ingress",
+                "resource_version": "1578",
+                "uid": "e6ad163c-8403-4777-8643-727c875ca117"
               }
             ],
             "spec": [
               {
-                "cluster_ip": "10.245.244.178",
+                "cluster_ip": "10.245.123.63",
                 "external_ips": [],
                 "external_name": "",
-                "external_traffic_policy": "Cluster",
-                "health_check_node_port": 0,
+                "external_traffic_policy": "Local",
+                "health_check_node_port": 31606,
                 "load_balancer_ip": "",
                 "load_balancer_source_ranges": [],
                 "port": [
                   {
-                    "name": "status-port",
-                    "node_port": 32427,
-                    "port": 15021,
-                    "protocol": "TCP",
-                    "target_port": "15021"
-                  },
-                  {
-                    "name": "http2",
-                    "node_port": 32423,
+                    "name": "http",
+                    "node_port": 31123,
                     "port": 80,
                     "protocol": "TCP",
-                    "target_port": "8080"
+                    "target_port": "80"
                   },
                   {
                     "name": "https",
-                    "node_port": 31754,
+                    "node_port": 31423,
                     "port": 443,
                     "protocol": "TCP",
-                    "target_port": "8443"
+                    "target_port": "80"
                   }
                 ],
                 "publish_not_ready_addresses": false,
                 "selector": {
-                  "app": "istio-ingressgateway",
-                  "istio": "ingressgateway"
+                  "app": "nginx-stable-nginx-ingress"
                 },
                 "session_affinity": "None",
                 "type": "LoadBalancer"
@@ -195,7 +184,7 @@
                     "ingress": [
                       {
                         "hostname": "",
-                        "ip": "167.99.18.56"
+                        "ip": "161.35.246.194"
                       }
                     ]
                   }
@@ -208,7 +197,7 @@
       ]
     },
     {
-      "module": "module.istio[0]",
+      "module": "module.nginx-ingress[0]",
       "mode": "managed",
       "type": "digitalocean_record",
       "name": "base-public",
@@ -221,26 +210,23 @@
             "domain": "romanow-alex.ru",
             "flags": 0,
             "fqdn": "k8s-cluster.romanow-alex.ru",
-            "id": "272443437",
+            "id": "272968216",
             "name": "k8s-cluster",
             "port": 0,
             "priority": 0,
             "tag": "",
             "ttl": 300,
             "type": "A",
-            "value": "167.99.18.56",
+            "value": "161.35.246.194",
             "weight": 0
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
+            "module.nginx-ingress.data.kubernetes_service.nginx-ingress",
+            "module.nginx-ingress.helm_release.ingress",
             "data.digitalocean_certificate.certificate",
-            "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.data.kubernetes_service.istio-ingress",
-            "module.istio.helm_release.discovery",
-            "module.istio.helm_release.istio-base",
-            "module.istio.helm_release.istio-ingress",
-            "module.istio.kubernetes_namespace.istio-system"
+            "digitalocean_kubernetes_cluster.cluster"
           ]
         },
         {
@@ -249,27 +235,22 @@
           "attributes": {
             "domain": "romanow-alex.ru",
             "flags": 0,
-            "fqdn": "book-store.romanow-alex.ru",
-            "id": "272443441",
-            "name": "book-store",
+            "fqdn": "store.romanow-alex.ru",
+            "id": "272968217",
+            "name": "store",
             "port": 0,
             "priority": 0,
             "tag": "",
             "ttl": 300,
             "type": "A",
-            "value": "167.99.18.56",
+            "value": "161.35.246.194",
             "weight": 0
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "data.digitalocean_certificate.certificate",
             "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.data.kubernetes_service.istio-ingress",
-            "module.istio.helm_release.discovery",
-            "module.istio.helm_release.istio-base",
-            "module.istio.helm_release.istio-ingress",
-            "module.istio.kubernetes_namespace.istio-system"
+            "module.nginx-ingress.data.kubernetes_service.nginx-ingress"
           ]
         },
         {
@@ -278,27 +259,22 @@
           "attributes": {
             "domain": "romanow-alex.ru",
             "flags": 0,
-            "fqdn": "grafana.romanow-alex.ru",
-            "id": "272443439",
-            "name": "grafana",
+            "fqdn": "order.romanow-alex.ru",
+            "id": "272968214",
+            "name": "order",
             "port": 0,
             "priority": 0,
             "tag": "",
             "ttl": 300,
             "type": "A",
-            "value": "167.99.18.56",
+            "value": "161.35.246.194",
             "weight": 0
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "data.digitalocean_certificate.certificate",
             "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.data.kubernetes_service.istio-ingress",
-            "module.istio.helm_release.discovery",
-            "module.istio.helm_release.istio-base",
-            "module.istio.helm_release.istio-ingress",
-            "module.istio.kubernetes_namespace.istio-system"
+            "module.nginx-ingress.data.kubernetes_service.nginx-ingress"
           ]
         },
         {
@@ -307,27 +283,22 @@
           "attributes": {
             "domain": "romanow-alex.ru",
             "flags": 0,
-            "fqdn": "kiali.romanow-alex.ru",
-            "id": "272443440",
-            "name": "kiali",
+            "fqdn": "warehouse.romanow-alex.ru",
+            "id": "272968215",
+            "name": "warehouse",
             "port": 0,
             "priority": 0,
             "tag": "",
             "ttl": 300,
             "type": "A",
-            "value": "167.99.18.56",
+            "value": "161.35.246.194",
             "weight": 0
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "data.digitalocean_certificate.certificate",
             "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.data.kubernetes_service.istio-ingress",
-            "module.istio.helm_release.discovery",
-            "module.istio.helm_release.istio-base",
-            "module.istio.helm_release.istio-ingress",
-            "module.istio.kubernetes_namespace.istio-system"
+            "module.nginx-ingress.data.kubernetes_service.nginx-ingress"
           ]
         },
         {
@@ -336,74 +307,40 @@
           "attributes": {
             "domain": "romanow-alex.ru",
             "flags": 0,
-            "fqdn": "tracing.romanow-alex.ru",
-            "id": "272443438",
-            "name": "tracing",
+            "fqdn": "warranty.romanow-alex.ru",
+            "id": "272968219",
+            "name": "warranty",
             "port": 0,
             "priority": 0,
             "tag": "",
             "ttl": 300,
             "type": "A",
-            "value": "167.99.18.56",
+            "value": "161.35.246.194",
             "weight": 0
           },
           "sensitive_attributes": [],
           "private": "bnVsbA==",
           "dependencies": [
-            "data.digitalocean_certificate.certificate",
             "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.data.kubernetes_service.istio-ingress",
-            "module.istio.helm_release.discovery",
-            "module.istio.helm_release.istio-base",
-            "module.istio.helm_release.istio-ingress",
-            "module.istio.kubernetes_namespace.istio-system"
-          ]
-        },
-        {
-          "index_key": 5,
-          "schema_version": 0,
-          "attributes": {
-            "domain": "romanow-alex.ru",
-            "flags": 0,
-            "fqdn": "store.romanow-alex.ru",
-            "id": "272443436",
-            "name": "store",
-            "port": 0,
-            "priority": 0,
-            "tag": "",
-            "ttl": 300,
-            "type": "A",
-            "value": "167.99.18.56",
-            "weight": 0
-          },
-          "sensitive_attributes": [],
-          "private": "bnVsbA==",
-          "dependencies": [
-            "data.digitalocean_certificate.certificate",
-            "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.data.kubernetes_service.istio-ingress",
-            "module.istio.helm_release.discovery",
-            "module.istio.helm_release.istio-base",
-            "module.istio.helm_release.istio-ingress",
-            "module.istio.kubernetes_namespace.istio-system"
+            "module.nginx-ingress.data.kubernetes_service.nginx-ingress"
           ]
         }
       ]
     },
     {
-      "module": "module.istio[0]",
+      "module": "module.nginx-ingress[0]",
       "mode": "managed",
       "type": "helm_release",
-      "name": "discovery",
+      "name": "ingress",
       "provider": "provider[\"registry.terraform.io/hashicorp/helm\"]",
       "instances": [
         {
           "schema_version": 0,
           "attributes": {
             "atomic": false,
-            "chart": "discovery",
+            "chart": "nginx-ingress",
             "cleanup_on_fail": false,
-            "create_namespace": false,
+            "create_namespace": true,
             "dependency_update": false,
             "description": null,
             "devel": null,
@@ -411,247 +348,29 @@
             "disable_openapi_validation": false,
             "disable_webhooks": false,
             "force_update": false,
-            "id": "discovery",
+            "id": "nginx-stable",
             "keyring": null,
             "lint": false,
             "manifest": null,
             "max_history": 0,
             "metadata": [
               {
-                "app_version": "",
-                "chart": "discovery",
-                "name": "discovery",
-                "namespace": "istio-system",
+                "app_version": "2.0.2",
+                "chart": "nginx-ingress",
+                "name": "nginx-stable",
+                "namespace": "nginx-ingress",
                 "revision": 1,
-                "values": "{}",
-                "version": "1.10.3"
+                "values": "{\"controller\":{\"service\":{\"annotations\":{\"service.beta.kubernetes.io/do-loadbalancer-certificate-id\":\"0fac0dbc-004b-4d9c-b561-9555f791852e\",\"service.beta.kubernetes.io/do-loadbalancer-name\":\"loadbalancer\"},\"httpsPort\":{\"targetPort\":80}}}}",
+                "version": "0.11.2"
               }
             ],
-            "name": "discovery",
-            "namespace": "istio-system",
+            "name": "nginx-stable",
+            "namespace": "nginx-ingress",
             "postrender": [],
             "recreate_pods": false,
             "render_subchart_notes": true,
             "replace": false,
-            "repository": "https://comocomo.github.io/istio-charts",
-            "repository_ca_file": null,
-            "repository_cert_file": null,
-            "repository_key_file": null,
-            "repository_password": null,
-            "repository_username": null,
-            "reset_values": false,
-            "reuse_values": false,
-            "set": [],
-            "set_sensitive": [],
-            "skip_crds": false,
-            "status": "deployed",
-            "timeout": 600,
-            "values": null,
-            "verify": false,
-            "version": "1.10.3",
-            "wait": true,
-            "wait_for_jobs": false
-          },
-          "sensitive_attributes": [],
-          "private": "bnVsbA==",
-          "dependencies": [
-            "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.helm_release.istio-base",
-            "module.istio.kubernetes_namespace.istio-system"
-          ]
-        }
-      ]
-    },
-    {
-      "module": "module.istio[0]",
-      "mode": "managed",
-      "type": "helm_release",
-      "name": "istio-base",
-      "provider": "provider[\"registry.terraform.io/hashicorp/helm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "atomic": false,
-            "chart": "base",
-            "cleanup_on_fail": false,
-            "create_namespace": false,
-            "dependency_update": false,
-            "description": null,
-            "devel": null,
-            "disable_crd_hooks": false,
-            "disable_openapi_validation": false,
-            "disable_webhooks": false,
-            "force_update": false,
-            "id": "istio-base",
-            "keyring": null,
-            "lint": false,
-            "manifest": null,
-            "max_history": 0,
-            "metadata": [
-              {
-                "app_version": "",
-                "chart": "base",
-                "name": "istio-base",
-                "namespace": "istio-system",
-                "revision": 1,
-                "values": "{}",
-                "version": "1.10.3"
-              }
-            ],
-            "name": "istio-base",
-            "namespace": "istio-system",
-            "postrender": [],
-            "recreate_pods": false,
-            "render_subchart_notes": true,
-            "replace": false,
-            "repository": "https://comocomo.github.io/istio-charts",
-            "repository_ca_file": null,
-            "repository_cert_file": null,
-            "repository_key_file": null,
-            "repository_password": null,
-            "repository_username": null,
-            "reset_values": false,
-            "reuse_values": false,
-            "set": [],
-            "set_sensitive": [],
-            "skip_crds": false,
-            "status": "deployed",
-            "timeout": 600,
-            "values": null,
-            "verify": false,
-            "version": "1.10.3",
-            "wait": true,
-            "wait_for_jobs": false
-          },
-          "sensitive_attributes": [],
-          "private": "bnVsbA==",
-          "dependencies": [
-            "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.kubernetes_namespace.istio-system"
-          ]
-        }
-      ]
-    },
-    {
-      "module": "module.istio[0]",
-      "mode": "managed",
-      "type": "helm_release",
-      "name": "istio-egress",
-      "provider": "provider[\"registry.terraform.io/hashicorp/helm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "atomic": false,
-            "chart": "egress",
-            "cleanup_on_fail": false,
-            "create_namespace": false,
-            "dependency_update": false,
-            "description": null,
-            "devel": null,
-            "disable_crd_hooks": false,
-            "disable_openapi_validation": false,
-            "disable_webhooks": false,
-            "force_update": false,
-            "id": "egress",
-            "keyring": null,
-            "lint": false,
-            "manifest": null,
-            "max_history": 0,
-            "metadata": [
-              {
-                "app_version": "",
-                "chart": "egress",
-                "name": "egress",
-                "namespace": "istio-system",
-                "revision": 1,
-                "values": "{}",
-                "version": "1.10.3"
-              }
-            ],
-            "name": "egress",
-            "namespace": "istio-system",
-            "postrender": [],
-            "recreate_pods": false,
-            "render_subchart_notes": true,
-            "replace": false,
-            "repository": "https://comocomo.github.io/istio-charts",
-            "repository_ca_file": null,
-            "repository_cert_file": null,
-            "repository_key_file": null,
-            "repository_password": null,
-            "repository_username": null,
-            "reset_values": false,
-            "reuse_values": false,
-            "set": [],
-            "set_sensitive": [],
-            "skip_crds": false,
-            "status": "deployed",
-            "timeout": 600,
-            "values": null,
-            "verify": false,
-            "version": "1.10.3",
-            "wait": true,
-            "wait_for_jobs": false
-          },
-          "sensitive_attributes": [],
-          "private": "bnVsbA==",
-          "dependencies": [
-            "data.digitalocean_certificate.certificate",
-            "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.helm_release.discovery",
-            "module.istio.helm_release.istio-base",
-            "module.istio.helm_release.istio-ingress",
-            "module.istio.kubernetes_namespace.istio-system"
-          ]
-        }
-      ]
-    },
-    {
-      "module": "module.istio[0]",
-      "mode": "managed",
-      "type": "helm_release",
-      "name": "istio-ingress",
-      "provider": "provider[\"registry.terraform.io/hashicorp/helm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "atomic": false,
-            "chart": "ingress",
-            "cleanup_on_fail": false,
-            "create_namespace": false,
-            "dependency_update": false,
-            "description": null,
-            "devel": null,
-            "disable_crd_hooks": false,
-            "disable_openapi_validation": false,
-            "disable_webhooks": false,
-            "force_update": false,
-            "id": "ingress",
-            "keyring": null,
-            "lint": false,
-            "manifest": null,
-            "max_history": 0,
-            "metadata": [
-              {
-                "app_version": "",
-                "chart": "ingress",
-                "name": "ingress",
-                "namespace": "istio-system",
-                "revision": 1,
-                "values": "{\"gateways\":{\"istio-ingressgateway\":{\"serviceAnnotations\":{\"service.beta.kubernetes.io/do-loadbalancer-certificate-id\":\"0fac0dbc-004b-4d9c-b561-9555f791852e\",\"service.beta.kubernetes.io/do-loadbalancer-name\":\"loadbalancer\"}}}}",
-                "version": "1.10.3"
-              }
-            ],
-            "name": "ingress",
-            "namespace": "istio-system",
-            "postrender": [],
-            "recreate_pods": false,
-            "render_subchart_notes": true,
-            "replace": false,
-            "repository": "https://comocomo.github.io/istio-charts",
+            "repository": "https://helm.nginx.com/stable",
             "repository_ca_file": null,
             "repository_cert_file": null,
             "repository_key_file": null,
@@ -661,14 +380,19 @@
             "reuse_values": false,
             "set": [
               {
-                "name": "gateways.istio-ingressgateway.serviceAnnotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id",
+                "name": "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id",
                 "type": "",
                 "value": "0fac0dbc-004b-4d9c-b561-9555f791852e"
               },
               {
-                "name": "gateways.istio-ingressgateway.serviceAnnotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name",
+                "name": "controller.service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name",
                 "type": "",
                 "value": "loadbalancer"
+              },
+              {
+                "name": "controller.service.httpsPort.targetPort",
+                "type": "",
+                "value": "80"
               }
             ],
             "set_sensitive": [],
@@ -677,7 +401,7 @@
             "timeout": 600,
             "values": null,
             "verify": false,
-            "version": "1.10.3",
+            "version": "0.11.2",
             "wait": true,
             "wait_for_jobs": false
           },
@@ -685,41 +409,6 @@
           "private": "bnVsbA==",
           "dependencies": [
             "data.digitalocean_certificate.certificate",
-            "digitalocean_kubernetes_cluster.cluster",
-            "module.istio.helm_release.discovery",
-            "module.istio.helm_release.istio-base",
-            "module.istio.kubernetes_namespace.istio-system"
-          ]
-        }
-      ]
-    },
-    {
-      "module": "module.istio[0]",
-      "mode": "managed",
-      "type": "kubernetes_namespace",
-      "name": "istio-system",
-      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "id": "istio-system",
-            "metadata": [
-              {
-                "annotations": null,
-                "generate_name": "",
-                "generation": 0,
-                "labels": null,
-                "name": "istio-system",
-                "resource_version": "1226",
-                "uid": "fbb4601e-0c4b-4aa2-80d6-f6e2e4d41544"
-              }
-            ],
-            "timeouts": null
-          },
-          "sensitive_attributes": [],
-          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjozMDAwMDAwMDAwMDB9fQ==",
-          "dependencies": [
             "digitalocean_kubernetes_cluster.cluster"
           ]
         }
