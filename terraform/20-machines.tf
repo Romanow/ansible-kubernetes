@@ -1,7 +1,7 @@
 resource "digitalocean_kubernetes_cluster" "cluster" {
   name    = var.k8s.name
   region  = var.k8s.region
-  version = "1.20.9-do.0"
+  version = "1.20.11-do.0"
 
   node_pool {
     name       = "worker-pool"
@@ -42,7 +42,10 @@ module "nginx-ingress" {
     "store",
     "order",
     "warehouse",
-    "warranty"
+    "warranty",
+    "grafana",
+    "kibana",
+    "jaeger"
   ]
 }
 
@@ -56,8 +59,8 @@ module "istio" {
     "k8s-cluster",
     "book-store",
     "grafana",
-    "kiali",
     "tracing",
+    "kiali",
     "store"
   ]
 }

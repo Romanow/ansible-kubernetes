@@ -33,10 +33,10 @@ variable "k8s" {
       name = "loadbalancer"
       type = "ingress"
     }
-    count        = 3
+    count        = 5
     region       = "ams3"
     name         = "k8s-cluster"
-    size         = "s-2vcpu-2gb"
+    size         = "s-2vcpu-4gb"
   }
 
   validation {
