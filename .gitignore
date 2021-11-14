@@ -5,6 +5,7 @@
 .idea/
 .vagrant/
 .vault_pass
+state/
 .terraform/
 .terraform.lock.hcl
 .DS_Store
@@ -12,3 +13,4 @@
 *.lock.info
 digital_ocean.ini
 terraform.state.backup
+.terragrunt-cache

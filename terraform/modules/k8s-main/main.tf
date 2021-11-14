@@ -1,12 +1,12 @@
 resource "digitalocean_kubernetes_cluster" "cluster" {
-  name    = var.k8s.name
-  region  = var.k8s.region
+  name    = var.k8s_cluster_name
+  region  = var.k8s_cluster_region
   version = "1.20.11-do.0"
 
   node_pool {
     name       = "worker-pool"
-    size       = var.k8s.size
-    node_count = var.k8s.count
+    size       = var.k8s_cluster_size
+    node_count = var.k8s_cluster_node_count
     tags       = [
       var.cluster_tag
     ]
@@ -32,10 +32,10 @@ provider "helm" {
 }
 
 module "nginx-ingress" {
-  count             = var.k8s.loadbalancer.type == "ingress" ? 1 : 0
-  source            = "./modules/nginx-ingress"
+  count             = var.k8s_loadbalancer_type == "ingress" ? 1 : 0
+  source            = "./nginx-ingress"
   certificate_id    = data.digitalocean_certificate.certificate.uuid
-  loadbalancer_name = var.k8s.loadbalancer.name
+  loadbalancer_name = var.k8s_loadbalancer_name
   domain            = var.domain
   hostnames         = [
     "k8s-cluster",
@@ -50,10 +50,10 @@ module "nginx-ingress" {
 }
 
 module "istio" {
-  count             = var.k8s.loadbalancer.type == "istio" ? 1 : 0
-  source            = "./modules/istio"
+  count             = var.k8s_loadbalancer_type == "istio" ? 1 : 0
+  source            = "./istio"
   certificate_id    = data.digitalocean_certificate.certificate.uuid
-  loadbalancer_name = var.k8s.loadbalancer.name
+  loadbalancer_name = var.k8s_loadbalancer_name
   domain            = var.domain
   hostnames         = [
     "k8s-cluster",

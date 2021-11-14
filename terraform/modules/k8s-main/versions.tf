@@ -14,11 +14,4 @@ terraform {
       version = ">= 2.0.1"
     }
   }
-  backend "local" {
-    path = "state/terraform.state"
-  }
-}
-
-provider "digitalocean" {
-  token = var.do_token
 }
