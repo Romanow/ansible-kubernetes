@@ -1,13 +1,15 @@
 # Terraform DigitalOcean Managed K8S Cluster
 
 ```shell
-echo 'do_token = <do_token>' > vars.auto.tfvars
-terraform init
-terraform apply
+tgenv install
+echo 'do_token = <do_token>' > ingress/credentials.auto.tfvars
+terragrant apply
 ```
 
+### Особенности реализации
+
 DigitalOcean автоматически создает LoadBalancer для сущности k8s LoadBalancer. Нужно в helm скриптах явно прописать
-конфигурацию LB.
+конфигурацию LoadBalancer.
 
 ### Links
 

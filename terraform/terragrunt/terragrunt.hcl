@@ -1,7 +1,7 @@
 terraform_version_constraint = "~> 1.0"
 
 terraform {
-  source = "${path_relative_from_include()}/../modules/k8s-main"
+  source = "${path_relative_from_include()}/../modules/k8s-cluster"
 }
 
 remote_state {

@@ -33,7 +33,7 @@ provider "helm" {
 
 module "nginx-ingress" {
   count             = var.k8s_loadbalancer_type == "ingress" ? 1 : 0
-  source            = "./nginx-ingress"
+  source            = "./ingress"
   certificate_id    = data.digitalocean_certificate.certificate.uuid
   loadbalancer_name = var.k8s_loadbalancer_name
   domain            = var.domain
