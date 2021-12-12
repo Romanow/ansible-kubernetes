@@ -15,8 +15,8 @@ inputs = {
   k8s_cluster_name       = "${basename(get_terragrunt_dir())}-cluster"
   k8s_cluster_node_count = 3
   k8s_cluster_region     = "ams3"
-  k8s_cluster_size       = "s-2vcpu-2gb"
+  k8s_cluster_size       = "s-2vcpu-4gb"
 
-  k8s_loadbalancer_type = "ingress"
+  k8s_loadbalancer_type = "istio"
   k8s_loadbalancer_name = "loadbalancer"
 }
