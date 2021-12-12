@@ -36,34 +36,33 @@ resource "kubernetes_namespace" "istio-ingress-namespace" {
 }
 
 resource "helm_release" "ingress" {
-  name       = "ingress"
-  repository = "https://istio-release.storage.googleapis.com/charts"
-  chart      = "gateway"
-  namespace  = kubernetes_namespace.istio-ingress-namespace.metadata[0].name
-  timeout    = 600
+  name            = "istio-ingress"
+  repository      = "https://istio-release.storage.googleapis.com/charts"
+  chart           = "gateway"
+  namespace       = kubernetes_namespace.istio-ingress-namespace.metadata[0].name
+  cleanup_on_fail = true
+  timeout         = 600
 
   set {
-    name  = "service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name"
-    # name  = "gateways.istio-ingressgateway.serviceAnnotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name"
+    name  = "annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-name"
     value = var.loadbalancer_name
   }
 
   set {
-    name  = "service.annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id"
-    # name  = "gateways.istio-ingressgateway.serviceAnnotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id"
+    name  = "annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-certificate-id"
     value = var.certificate_id
   }
 
   depends_on = [
     helm_release.base,
-    helm_release.ingress,
+    helm_release.istiod,
     kubernetes_namespace.istio-ingress-namespace
   ]
 }
 
 data "kubernetes_service" "ingress-service" {
   metadata {
-    name      = "ingress"
+    name      = "istio-ingress"
     namespace = kubernetes_namespace.istio-ingress-namespace.metadata[0].name
   }
   depends_on = [
