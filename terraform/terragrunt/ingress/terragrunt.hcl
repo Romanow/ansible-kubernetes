@@ -3,7 +3,7 @@ include "root" {
 }
 
 inputs = {
-  k8s_cluster_node_count = 5
-  k8s_cluster_size       = "s-2vcpu-4gb"
+  k8s_cluster_node_count = 3
+  k8s_cluster_size       = "s-2vcpu-2gb"
   k8s_loadbalancer_type  = "ingress"
 }
