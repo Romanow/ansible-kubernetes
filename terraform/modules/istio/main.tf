@@ -53,6 +53,23 @@ resource "helm_release" "ingress" {
     value = var.certificate_id
   }
 
+  set {
+    name  = "annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-protocol"
+    value = "http"
+  }
+
+  set {
+    name  = "annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-http-ports"
+    value = "80"
+    type = "string"
+  }
+
+  set {
+    name  = "annotations.service\\.beta\\.kubernetes\\.io/do-loadbalancer-tls-ports"
+    value = "443"
+    type = "string"
+  }
+
   depends_on = [
     helm_release.base,
     helm_release.istiod,
